@@ -70,8 +70,8 @@ body {
     border: none;
     background: red;
     border-radius: 12px;
-    color : white;
-    border : 3px solid white;
+    color : #ee5959;
+    border : 3px solid #ee5959;
 }
 
  i{
@@ -84,8 +84,8 @@ body {
     border: none;
     background: green;
     border-radius: 12px;
-    color : white;
-    border : 3px solid white;
+    color : #79af65;
+    border : 3px solid #79af65;
 } 
 
 
