@@ -4,7 +4,6 @@ function moveQuestionRight() {
     questionDiv.classList.add('moveRight');
 }
 
-
 function moveQuestionLeft() {
     var questionDiv = document.querySelector(".question");
     questionDiv.classList.add('moveLeft');
@@ -22,6 +21,4 @@ let buttonCauch = document.querySelector(".cauchemar");
 buttonV.addEventListener("click", moveQuestionRight);
 buttonX.addEventListener("click", moveQuestionLeft);
 buttonCauch.addEventListener("mouseenter",cauchemar_button);
-
-
 

@@ -64,7 +64,7 @@ body {
     margin-bottom: 25px;
 }
 
-.oui{
+#ouiCauchemar{
     height : 9vh;
     width: 9vh;
     border: none;
@@ -78,7 +78,7 @@ body {
     font-size: 40px;
 }
 
-.non{
+#nonCauchemar{
     height : 9vh;
     width: 9vh;
     border: none;
@@ -124,11 +124,16 @@ body {
     color : white;
 }
 
+.container.spin {
+    animation: spin 1.3s linear infinite;
+}
+
 
 .cauchemar.moveRandom {
     transform: translateX(100em); 
     transition: transform 1.5s ease; 
 }
+
 
 
 @keyframes spin {
