@@ -4,6 +4,10 @@
     require "Controllers/API/Request_controller.php";
     require "Controllers/UsersControllers/Session_controller.php";
     require "Controllers/UsersControllers/Permission_controller.php";
+    /**
+     * @var $db
+     */
+    require "Controllers/Db_controller.php";
 
     $env = realpath(__DIR__ . '/.env');
 
@@ -22,5 +26,5 @@
         $data = $_POST;
     }
 
-    $request_controller = new Request_controller($data, $session_controller, "Controllers/API/scripts");
+    $request_controller = new Request_controller($data,  $db, $session_controller,  "Controllers/API/scripts");
     $request_controller->handle_request();

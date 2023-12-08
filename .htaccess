@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+
+#I think this sets the base url of the site?
+RewriteBase /backend_plus
+#What does this mean??
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#AND THIS?!
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

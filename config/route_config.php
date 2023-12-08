@@ -14,5 +14,23 @@
             "params" => [
                 "test"
             ]
+        ],
+        [
+            "name" => "login",
+            "file" => "public/pages/guest/login.php"
+        ],
+        [
+            "name" => "signin",
+            "file" => "public/pages/guest/signin.php"
+        ],
+        [
+            "name" => "index",
+            "file" => "public/pages/public/index.php",
+            "permission" => new Permission("public")
+        ],
+        [
+            "name" => "cauchemard",
+            "file" => "public/pages/public/cauchemard.php",
+            "permission" => new Permission("public")
         ]
     ];

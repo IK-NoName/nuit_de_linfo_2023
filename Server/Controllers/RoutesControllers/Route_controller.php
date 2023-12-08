@@ -18,6 +18,7 @@ class Route_controller
 
     public function add_route(string $name, string $file_path, Permission $permission = new Permission("guest"),  $params = 0): void
     {
+
         if($name == "*")
         {
             include $this->_PAGE_NOT_FOUND;
@@ -35,6 +36,7 @@ class Route_controller
                 }
                 else if($this->_SESSION_CONTROLLER->get_permission()->is_authorized($permission))
                 {
+                    $session_controller = $this->_SESSION_CONTROLLER;
                     include($file_path);
                 }
                 else
@@ -76,6 +78,7 @@ class Route_controller
                     }
                     else if($this->_SESSION_CONTROLLER->get_permission()->is_authorized($permission))
                     {
+                        $session_controller = $this->_SESSION_CONTROLLER;
                         include($file_path);
                     }
                     else
@@ -102,9 +105,9 @@ class Route_controller
 
             if(isset($routes))
             {
+
                 foreach ($routes as $route)
                 {
-
                         isset($route["params"]) ? $params = count($route["params"]) : $params = 0;
                         isset($route["name"]) ? $name = $route["name"] : $name = "undefined";
                         isset($route["file"]) ? $file = $route["file"] : $file = "undefined";

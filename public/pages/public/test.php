@@ -20,6 +20,8 @@
     Var en php lol
     <br>
     <br>
-    <?php param("test"); ?>
+    <?php param("test");
+        echo $session_controller->get_pseudo();
+    ?>
 </body>
 </html>

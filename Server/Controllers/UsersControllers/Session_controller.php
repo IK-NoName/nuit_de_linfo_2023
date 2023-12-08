@@ -27,7 +27,14 @@
 
         public function get_permission() : Permission
         {
-            return $_SESSION["PERMISSION"];
+                if(isset($_SESSION["PERMISSION"]))
+            {
+                return $_SESSION["PERMISSION"];
+            }
+            else
+            {
+                return new Permission("guest");
+            }
         }
 
         public function is_authenticate() : bool

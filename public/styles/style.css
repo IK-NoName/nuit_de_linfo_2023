@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+@import url("color.css");
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+    min-height : 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Lavandes®-5-hex);
+}
+
+.container{
+    height: 80vh;
+    width: 35vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Carbon-credit-3);
+    border-radius: 3px;
+    box-shadow: 2px 3px 18px black;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.question{
+    background : var(--Carbon-credit-2);
+    width: 90%;
+    height: 70%;
+    margin-top: 20px;
+    padding-inline: 15%;
+    margin: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    justify-content: space-between ;
+    box-shadow: 2px 2px 18px black;
+    
+}
+
+.question img{
+    width: 10vw;
+    height: auto;
+    margin-left: 80%;
+}
+
+.btncontainer{
+    height : 10vh;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.oui{
+    height : 9vh;
+    width: 9vh;
+    border: none;
+    background: green;
+    border-radius: 12px;
+    color : white;
+    border : 3px solid white;
+}
+
+ i{
+    font-size: 40px;
+}
+
+.non{
+    height : 9vh;
+    width: 9vh;
+    border: none;
+    background: red;
+    border-radius: 12px;
+    color : white;
+    border : 3px solid white;
+} 
+
+
+.question.moveRight {
+    transform: translateX(100em); 
+    transition: transform 1.5s ease; 
+}
+
+.question.moveLeft {
+    transform: translateX(-100em); 
+    transition: transform 1.5s ease; 
+}
+
+
+.questiontext{
+    font-size: 3vh;
+    color: whitesmoke;
+}
+
+.link{
+    color: white;
+    font-size: 0.7em  ;
+}
+
+#Cauchemar {
+    position : absolute;
+    left : 10%;
+    border : none;
+    background-color: rgba(0,0,0,0.2);
+    height : 4vh;
+    justify-content: center;
+    width : 10em;
+    margin: 1em;
+    text-align: center;
+    border-radius: 0.5rem;
+    color : white;
+}
+
+#Cauchemar:hover {
+    box-shadow: 0 0 15px whitesmoke;
+    transition: 0.5s;
+    background: rgba(0,0,0,0.9);
+    animation-name : spin;
+    animation-duration: 1s;
+}
+
+body.cauchemar{
+    transform: rotateZ(180deg);
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg)
+    }
+    100% {
+        transform: rotateZ(360deg)
+    }
+}

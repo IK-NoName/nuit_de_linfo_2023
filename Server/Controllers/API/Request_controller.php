@@ -4,12 +4,14 @@ class Request_controller
     private array $_REQUEST;
     private Session_controller $_SESSION_CONTROLLER;
     private string $_SCRIPTS_PATH;
+    private mysqli $_DB;
 
-    public function __construct(array $request, Session_controller $session_controller, string $scripts_path)
+    public function __construct(array $request, mysqli $db, Session_controller $session_controller, string $scripts_path)
     {
         $this->_REQUEST = $request;
         $this->_SESSION_CONTROLLER = $session_controller;
         $this->_SCRIPTS_PATH = $scripts_path;
+        $this->_DB = $db;
     }
 
     private function search_script() : ?string
@@ -43,7 +45,6 @@ class Request_controller
                     $final_params = [];
                     $others = [];
                     $i = 0;
-
                     while($require_ok && $i < count($require))
                     {
                         if(isset($this->_REQUEST[$require[$i]]))
@@ -58,12 +59,12 @@ class Request_controller
                     }
                     if($require_ok)
                     {
-                        return run($final_params, $this->_SESSION_CONTROLLER, $others);
+                        return run($final_params, $this->_DB, $this->_SESSION_CONTROLLER, $others);
                     }
                 }
             }
         }
-        return null;
+        return NULL;
     }
 
     public function handle_request() : void
@@ -71,12 +72,7 @@ class Request_controller
         $potential_script = $this->search_script();
         if ($potential_script != null) {
             $result = $this->execute_script($potential_script);
-            if ($result != null) {
-                echo json_encode($result);
-            } else {
-                echo "Error of permission or parameters";
-            }
-
+            echo json_encode($result);
         }
         else
         {
